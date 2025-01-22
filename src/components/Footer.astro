@@ -1,0 +1,114 @@
+---
+import { Image } from "astro:assets";
+
+---
+    <footer class="footer">
+        <div class="box">
+            <h3 class="title">
+                Farmacia Alfaro
+            </h3>
+            <div class="icons">
+                <Image src="/facebook.svg" class="icon" alt="nothing" width="35" height="35"/>
+                <Image src="/whatsapp.svg" class="icon" alt="nothing" width="35" height="35"/>
+                <Image src="/instagram.svg" class="icon" alt="nothing" width="35" height="35"/>
+            </div>
+            <p class="derechos">
+                Todos los derechos Reservados por Farmacia Alfaro
+            </p>
+        </div>
+    </footer>
+
+<style>
+
+    .footer{
+
+        height: 50px;
+        background-color: var(--first-color);
+        color: var(--third-color);
+        font-family: "Poppins";
+
+        container-type: inline-size;
+        container-name: footer;
+
+    }
+
+    .box{ 
+        padding: 0 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .title{
+        margin-top: 0.5rem;
+        text-align: center;
+        font-weight: 800;
+        font-size: clamp(10px, 23px, 25px);
+    }
+
+    .icons{
+        margin-top: 0.5rem;
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+    }
+
+    .icon{
+        background-color: var(--third-color);
+        border-radius: 9px;
+    }
+
+    .derechos{
+        margin-top: 0.5rem;
+        text-align: center;
+        padding: 10px 0;
+        font-size: clamp(5px, 12px, 25px);
+    }
+
+    @container footer (width < 900px){
+
+        .box{ 
+            padding: 0 100px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .icon{
+            width: 25px;
+            height: 25px;
+            border-radius: 7px;
+            margin-top: 0;
+        }
+
+        .title{
+            text-align: center;
+            padding: 5px 0;
+            font-weight: 500;
+        }
+
+        .derechos{
+            margin-top: 0;
+            text-align: center;
+            padding: 10px 0;
+            font-size: clamp(5px, 12px, 25px);
+        }
+
+    }
+
+    .footer {
+        scroll-behavior: none; /* o none */
+    }
+
+    @media (width < 900px) {
+        .footer{
+            height: 150px;
+        }
+    }
+
+    @media (width < 400px) {
+        .footer{
+            height: 195px;
+        }
+    }
+
+</style>

@@ -1,0 +1,91 @@
+---
+import { Image } from 'astro:assets';
+---
+<section class="Intro" id="Home">
+    <Image src="/Undraw_intro.svg" class="imagen" alt="nothing" width="780" height="640"/>
+    <div class="Info">
+        <h1 class="title">Farmacia Alfaro</h1>
+        <p class="paragraph">
+            somos un negocio comprometido con el bienestar de todos nuestros clientes, sin afectar su 
+            bolsillo.
+        </p>
+    </div>
+</section>
+
+<style>
+    .Intro{
+        position: relative;
+        padding: 100px 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+        container-type: inline-size;
+        container-name: icont;
+    }
+
+    .Info{
+        text-align: center;
+        font-family: "Poppins";
+    }
+
+    .title{
+        font-weight: 700;
+        color: var(--second-color);
+        padding-bottom: 30px;
+        font-size: clamp(24px, 5vw, 40px);
+        z-index: -100;
+    }
+
+    .paragraph{
+        color: var(--second-color);
+        font-size: clamp(12px, 2.5vw, 17px);
+    }
+    
+    @container icont (width < 900px){
+        .imagen{
+            width: 400px;
+            height: 450px;
+            margin: -20px;
+        }
+
+    }
+
+    @container icont (width < 600px){
+        .imagen{
+            width: 400px;
+            height: 450px;
+        }
+
+        .paragraph{
+            padding: 0 20px;
+        }
+    }
+
+    @container icont (width < 450px){
+        .imagen{
+            width: 300px;
+            height: 400px;
+        }
+
+    }
+
+    @media (min-width: 600px) and (max-width: 1200px){
+        .Intro{
+            flex-wrap: wrap;
+            padding: 50px 100px;
+            gap: 0;
+        }
+
+    }
+
+    @media (min-width: 300px) and (max-width: 600px){
+        .Intro{
+            flex-wrap: wrap;
+            padding: 50px 0 160px 0;
+            gap: 0;
+        }
+
+    }
+
+</style>

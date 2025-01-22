@@ -1,0 +1,161 @@
+---
+
+---
+
+<section class="turno" id="Turno">
+    <h2 class="title">Turno</h2>
+    <h3 class="sub_title">Calendario de atencion 24 horas</h3>
+    <div class="box">
+        <div class="card">
+            <h3 class="title_card">Julio</h3>
+            <div class="semana">
+                <p class="dias">Del 1 al 7</p>
+                <p class="nombre">Farmacia --- </p>
+            </div>
+            <div class="semana">
+                <p class="dias">Del 8 al 14</p>
+                <p class="nombre">Farmacia --- </p>
+            </div>
+            <div class="semana">
+                <p class="dias">Del 15 al 21</p>
+                <p class="nombre">Farmacia --- </p>
+            </div>
+            <div class="semana">
+                <p class="dias">Del 22 al 28</p>
+                <p class="nombre">Farmacia --- </p>
+            </div>
+        </div>
+        <div class="card">
+            <h3 class="title_card">Agosto</h3>
+            <div class="semana">
+                <p class="dias">Del 1 al 7</p>
+                <p class="nombre">Farmacia --- </p>
+            </div>
+            <div class="semana">
+                <p class="dias">Del 8 al 14</p>
+                <p class="nombre">Farmacia --- </p>
+            </div>
+            <div class="semana">
+                <p class="dias">Del 15 al 21</p>
+                <p class="nombre">Farmacia --- </p>
+            </div>
+            <div class="semana">
+                <p class="dias">Del 22 al 28</p>
+                <p class="nombre">Farmacia --- </p>
+            </div>
+        </div>
+        <div class="card">
+            <h3 class="title_card">Septiembre</h3>
+            <div class="semana">
+                <p class="dias">Del 1 al 7</p>
+                <p class="nombre">Farmacia --- </p>
+            </div>
+            <div class="semana">
+                <p class="dias">Del 8 al 14</p>
+                <p class="nombre">Farmacia --- </p>
+            </div>
+            <div class="semana">
+                <p class="dias">Del 15 al 21</p>
+                <p class="nombre">Farmacia --- </p>
+            </div>
+            <div class="semana">
+                <p class="dias">Del 22 al 28</p>
+                <p class="nombre">Farmacia --- </p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<style>
+    .turno{
+        font-family: "Poppins";
+        padding: 90px 100px;
+
+        container-type: inline-size;
+        container-name: about;
+    }
+
+    .title{
+        color: var(--first-color);
+        font-weight: 300;
+        text-align: center;
+        font-size: clamp(20px, 4vw, 30px);
+        padding-bottom: 25px;
+    }
+
+    .sub_title{
+        color: var(--second-color);
+        font-size: clamp(24px, 5vw, 40px);
+        text-align: center;
+        padding: 25px 0;
+    }
+
+    .box{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .card{
+        padding: 30px 0;
+        width: 250px;
+        height: 350px;
+        
+    }
+
+    .title_card{
+        color: var(--first-color);
+        font-weight: 500;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .semana{
+        background-color: var(--first-color);
+        color: var(--third-color);
+        margin: 2px 0;
+        border-radius: 10px;
+        height: 40px;
+        transition: 0.3s linear; 
+    }
+
+    .semana:hover{
+        height: 60px;
+    }
+
+    .nombre{
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    .semana:hover > :nth-child(2) {
+        opacity: 1;
+    }
+
+    .dias{
+        text-align: center;
+        padding: 0.5rem 0 0;
+    }
+
+    .nombre{
+        text-align: center;
+    }
+
+    @container about (width < 900px){
+        .card{
+            width: 220px;
+            height: 280px;
+        }
+    }
+
+    @media (width < 900px){
+        .turno{
+            font-family: "Poppins";
+            padding: 80px 40px 60px;
+        }
+    }
+
+</style>

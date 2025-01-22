@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Intro from '../components/Intro.astro';
+import About from '../components/About.astro';
+import Turno from '../components/Turno.astro';
+
+import { getCollection } from 'astro:content';
+
+const articles = await getCollection('articles')
+
+---
+
+<Layout title="Bienvenido a Farmacia Alfaro">
+	<main class="contenido">
+		<Intro />
+		<About />
+		<Turno />
+	</main>
+</Layout>
+
+<style>
+
+html{
+	scroll-behavior: smooth;
+	scroll-padding-top: 50px;
+}
+
+@media (width < 764px){
+	html{
+		scroll-padding-top: 20px;
+	}
+}
+
+@media (width < 900px){
+	html{
+		scroll-padding-top: 10px;
+	}
+}
+
+</style>

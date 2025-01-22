@@ -1,0 +1,87 @@
+---
+
+import CardAbout from './CardAbout.astro';
+
+const infoCardA = [
+        {
+            icon: "motorbike.svg",
+            title: "Ofrec",
+            paragraph: "Nos encargamos de entregarle su medicamento hasta la puerta de su hogar, asegurando su      pronta llegada. Es completamente gratis en la ciudad de somoto y sectores aledaños"
+        },
+        {
+            icon: "motorbike.svg",
+            title: "Ofreciendoles",
+            paragraph: "Nos encargamos de entregarle su medicamento hasta la puerta de su hogar, asegurando su      pronta llegada. Es completamente gratis en la ciudad de somoto y sectores aledaños"
+        },
+        {
+            icon: "motorbike.svg",
+            title: "Ofreciendoles",
+            paragraph: "Nos encargamos de entregarle su medicamento hasta la puerta de su hogar, asegurando su      pronta llegada. Es completamente gratis en la ciudad de somoto y sectores aledaños"
+        }
+    ]
+---
+
+<section class="about" id="About">
+    <h2 class="about_title">Ofreciendoles</h2>
+    <h3 class="second_title">Calidad en nuestros servicios</h3>
+    <div class="box">
+        {
+            infoCardA.map((info, index) => <CardAbout key={index} icon={info.icon} title={info.title} 
+                                            paragraph={info.paragraph} />)
+        }
+    </div>
+</section>
+
+<style>
+    .about{
+        padding: 90px 100px;
+        font-family: "Poppins";
+
+        container-type: inline-size;
+        container-name: about;
+    }
+
+    .about_title{
+        color: var(--first-color);
+        font-weight: 300;
+        text-align: center;
+        font-size: clamp(20px, 4vw, 30px);
+        padding-bottom: 25px;
+    }
+
+    .second_title{
+        color: var(--second-color);
+        font-weight: 600;
+        font-size: clamp(24px, 5vw, 40px);
+        text-align: center;
+        padding: 25px 0;
+    }
+
+    .box{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    
+    
+
+    @container about (width < 900px){
+        .second_title{
+            padding: 0;
+        }
+
+        .icon{
+            width: 30px;
+            height: 30px;
+        }
+
+    }
+
+    @media (width < 900px){
+        .about{
+            padding: 80px 40px 60px;
+        }
+    }
+
+</style>

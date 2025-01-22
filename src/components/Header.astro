@@ -1,0 +1,166 @@
+---
+import { Image } from "astro:assets";
+
+import Layout from "../layouts/Layout.astro";
+---
+
+
+<header id="header" class="header">
+    <nav class="nav">
+        <div class="navcontainer inactive" id="navcontainer">
+            <figure class="na">
+                
+            </figure>
+            <label class="toggle">
+                <input type="checkbox" class="input" id="input">
+            </label>
+            <ul class="list">
+                <li class="item">
+                    <a href="#Home" class="link textScroll">Inicio</a>
+                </li>
+                <li class="item">
+                    <a href="#About" class="link textScroll">Servicios</a>
+                </li>
+                <li class="item">
+                    <a href="#Turno" class="link textScroll">Turnos</a>
+                </li>
+                <li class="item">
+                    <a href="" class="link textScroll">Galeria</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<style>
+
+    .header{
+        width: 100%;
+        position: fixed;
+        z-index: 10;
+    }
+
+    .navcontainer{
+        font-family: "Poppins";
+
+        width: min(90%, 1200px);
+        margin: 0 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        height: 80px;
+    }
+
+    .inactive{
+        --icon-toggle-menu: url("/public/menu.svg");
+        --transform-menu-show: translate(-100%);
+    }
+
+    .active{
+        --icon-toggle-menu: url("/public/x.svg");
+        --transform-menu-show: translate(0%);
+    }
+
+    .list{
+        z-index: 1;
+        transform: var(--transform-menu-show);
+      
+        position: fixed;
+        inset: 0;
+
+        padding: 350px 5%;
+
+        display: grid;
+        place-content: center;
+        gap: 2rem;
+
+            
+        background: hsl(150, 100%, 43%, 1);
+
+        transition: .5s transform;
+        text-align: center;
+        text-decoration: none;
+
+        list-style: none;
+    }
+
+    .link{
+        color: var(--third-color);
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .link:hover{
+        border-bottom: ;
+    }
+
+    .toggle{
+        z-index: 10;
+        margin-top: 30px;
+        width: 30px;
+        height: 30px;
+        background-image: var(--icon-toggle-menu);
+        background-size: cover;
+        cursor: pointer;
+
+        transition: background-image 0.5s;
+    }
+
+    .input{
+        width: 30px;
+        height: 30px;
+        display: none;
+    }
+
+    @media (width > 764px){
+        .navcontainer{
+            --transform-menu-show: translate(0);
+        }
+
+        .toggle{
+            display: none;
+        }
+
+        .list{
+            position: static;
+            grid-auto-flow: column;
+            place-content: unset;
+            padding: 0;
+
+            transition: unset;
+            background: none;
+        }
+
+        .link{
+            color: var(--first-color);
+            text-decoration: none;
+    }
+    }
+
+</style>
+
+<script>
+    const navcontainer = document.getElementById('navcontainer');
+    const items = document.querySelectorAll('.item');
+    const input = document.getElementById('input');
+
+    input?.addEventListener('click', function(){
+        if(navcontainer?.classList.contains('inactive')) {
+            navcontainer?.classList.toggle('inactive');
+            navcontainer?.classList.toggle('active');
+        }  else {
+            navcontainer?.classList.toggle('active');
+            navcontainer?.classList.toggle('inactive');
+        }   
+    });
+
+    items.forEach((item) => {
+        item.addEventListener('click', function(){
+            navcontainer?.classList.toggle('active');
+            navcontainer?.classList.toggle('inactive');
+        });
+    });
+
+</script>
